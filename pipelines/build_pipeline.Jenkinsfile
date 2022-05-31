@@ -1,14 +1,13 @@
 pipeline {
     agent any
 
-    git branch: 'main',
-            poll: false,
-            url: 'https://github.com/lsmarsden/vaadin-flow.git'
-
     tools {
         maven 'maven'
     }
     stages {
+        git branch: 'main',
+                poll: false,
+                url: 'https://github.com/lsmarsden/vaadin-flow.git'
 
         stage('Building') {
             steps {
